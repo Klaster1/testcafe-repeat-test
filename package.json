@@ -1,6 +1,6 @@
 {
   "name": "@klaster_1/testcafe-repeat-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to ergonomically repeat TestCafe tests",
   "scripts": {
     "generate-reports": "npx testcafe ./tests/testcafe/default.ts -r \"json:tests/default.report.json\" && testcafe ./tests/testcafe/no-rename.ts -r \"json:tests/no-rename.report.json\" && npx testcafe ./tests/testcafe/esm.mjs -r \"json:tests/esm.report.json\" --esm",
@@ -13,12 +13,13 @@
   "types": "./dist/index.d.ts",
   "module": "./dist/main.mjs",
   "exports": {
-    ".": {
-      "node": "./dist/main.cjs",
-      "import": "./dist/main.mjs",
-      "types": "./dist/src/index.d.ts"
-    }
+    "node": "./dist/main.cjs",
+    "import": "./dist/main.mjs",
+    "types": "./dist/src/index.d.ts"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "testcafe"
   ],
