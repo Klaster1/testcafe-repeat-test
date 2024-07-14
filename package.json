@@ -42,5 +42,9 @@
   "engines": {
     "node": ">=20.15.0",
     "npm": ">=10.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Klaster1/testcafe-repeat-test"
   }
 }
