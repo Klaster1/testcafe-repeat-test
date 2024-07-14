@@ -1,11 +1,10 @@
 import assert from 'node:assert';
 import { readFile } from 'node:fs/promises';
 import { describe, test } from 'node:test';
-// import createTestCafe from 'testcafe';
 import type { Report } from './types';
 
 const getReport = async (name: string): Promise<Report> =>
-  JSON.parse(await readFile(`tests/${name}.report.json`, 'utf-8'));
+  JSON.parse(await readFile(`./tests/${name}.report.json`, 'utf-8'));
 
 const testsByFixture = (report: Report, fixtureName: string) =>
   report.fixtures.find((fixture) => fixture.name === fixtureName)?.tests;
@@ -19,7 +18,7 @@ describe('Defaults', () => {
   });
 
   test('It skips other tests', async () => {
-    const testNames = testsByFixture(await getReport('Default'), 'Default')?.flatMap((test) =>
+    const testNames = testsByFixture(await getReport('default'), 'Default')?.flatMap((test) =>
       !test.skipped && test.name.includes('Should not run') ? [test.name] : [],
     );
     assert.deepEqual(testNames, []);
