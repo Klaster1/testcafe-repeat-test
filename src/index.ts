@@ -1,5 +1,10 @@
-import 'testcafe';
+/// <reference types="testcafe" />
 
+/**
+ * Repeats a test multiple times and skips other tests.
+ * @param times - The number of times to repeat the test.
+ * @param options.rename - Whether to rename the test with an index.
+ */
 const repeatTest = (times: number, options?: { rename?: boolean }): void => {
   const testDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'test');
   if (!testDescriptor) return;

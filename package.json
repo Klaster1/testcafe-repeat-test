@@ -7,16 +7,16 @@
     "test": "npm run generate-reports && node tests/index.mjs",
     "test:watch": "npm run generate-reports && node --watch tests/index.mjs",
     "watch": "npx rollup -c --watch",
-    "build": "rollup --config --sourcemap"
+    "build": "rollup --config"
   },
   "main": "./dist/main.cjs",
-  "types": "./dist/main.d.ts",
+  "types": "./dist/index.d.ts",
   "module": "./dist/main.mjs",
   "exports": {
     ".": {
       "node": "./dist/main.cjs",
       "import": "./dist/main.mjs",
-      "types": "./dist/src/main.d.ts"
+      "types": "./dist/src/index.d.ts"
     }
   },
   "keywords": [
