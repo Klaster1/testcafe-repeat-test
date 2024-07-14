@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A tool to ergonomically repeat TestCafe tests",
   "scripts": {
-    "generate-reports": "npx testcafe ./tests/testcafe/default.ts -r \"json:tests/default.report.json\" && testcafe ./tests/testcafe/no-rename.ts -r \"json:tests/no-rename.report.json\"",
+    "generate-reports": "npx testcafe ./tests/testcafe/default.ts -r \"json:tests/default.report.json\" && testcafe ./tests/testcafe/no-rename.ts -r \"json:tests/no-rename.report.json\" && npx testcafe ./tests/testcafe/esm.mjs -r \"json:tests/esm.report.json\" --esm",
     "test": "npm run generate-reports && node tests/index.mjs",
     "test:watch": "npm run generate-reports && node --watch tests/index.mjs",
     "watch": "npx rollup -c --watch",

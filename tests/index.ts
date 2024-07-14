@@ -27,9 +27,18 @@ describe('Defaults', () => {
 
 describe('No rename', () => {
   test('Allows to disable renaming', async () => {
-    const testNames = testsByFixture(await getReport('no-rename'), 'No rename')?.flatMap((test: any) =>
+    const testNames = testsByFixture(await getReport('no-rename'), 'No rename')?.flatMap((test) =>
       !test.skipped && test.name.includes('No rename') ? [test.name] : [],
     );
     assert.deepEqual(testNames, ['No rename', 'No rename']);
+  });
+});
+
+describe('ESM', () => {
+  test('Works in ESM TestCafe mode', async () => {
+    const testNames = testsByFixture(await getReport('esm'), 'ESM')?.flatMap((test) =>
+      !test.skipped && test.name.includes('ESM') ? [test.name] : [],
+    );
+    assert.deepEqual(testNames, ['ESM 1', 'ESM 2']);
   });
 });
