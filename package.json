@@ -1,0 +1,45 @@
+{
+  "name": "@klaster_1/testcafe-repeat-test",
+  "version": "1.0.0",
+  "description": "A tool to ergonomically repeat TestCafe tests",
+  "scripts": {
+    "generate-reports": "npx testcafe ./tests/testcafe/default.ts -r \"json:tests/default.report.json\" && testcafe ./tests/testcafe/no-rename.ts -r \"json:tests/no-rename.report.json\"",
+    "test": "npm run generate-reports && node tests/index.mjs",
+    "test:watch": "npm run generate-reports && node --watch tests/index.mjs",
+    "watch": "npx rollup -c --watch",
+    "build": "rollup --config --sourcemap"
+  },
+  "main": "./dist/main.cjs",
+  "types": "./dist/main.d.ts",
+  "module": "./dist/main.mjs",
+  "exports": {
+    ".": {
+      "node": "./dist/main.cjs",
+      "import": "./dist/main.mjs",
+      "types": "./dist/src/main.d.ts"
+    }
+  },
+  "keywords": [
+    "testcafe"
+  ],
+  "author": "Ilya Borisov <klaster1@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "testcafe": "*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.14.10",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.0.0",
+    "rollup": "^4.18.1",
+    "testcafe": "^3.6.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=20.15.0",
+    "npm": ">=10.7.0"
+  }
+}

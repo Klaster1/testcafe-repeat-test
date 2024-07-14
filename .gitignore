@@ -1,0 +1,8 @@
+.vscode/
+*.code-workspace
+node_modules/
+.todo
+**/*.js
+tests/*report.json
+tests/*.mjs
+dist

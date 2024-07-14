@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "inlineSourceMap": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "isolatedDeclarations": true
+  },
+  "include": ["src/**/*.ts"]
+}
