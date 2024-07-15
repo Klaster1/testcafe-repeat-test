@@ -1,6 +1,6 @@
 {
   "name": "@klaster_1/testcafe-repeat-test",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tool to ergonomically repeat TestCafe tests",
   "scripts": {
     "generate-reports": "npx testcafe ./tests/testcafe/default.ts -r \"json:tests/default.report.json\" && testcafe ./tests/testcafe/no-rename.ts -r \"json:tests/no-rename.report.json\" && npx testcafe ./tests/testcafe/esm.mjs -r \"json:tests/esm.report.json\" --esm",
@@ -40,8 +40,7 @@
     "typescript": "^5.5.3"
   },
   "engines": {
-    "node": ">=20.15.0",
-    "npm": ">=10.7.0"
+    "node": ">=20"
   },
   "repository": {
     "type": "git",
