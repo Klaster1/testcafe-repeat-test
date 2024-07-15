@@ -5,6 +5,12 @@
 
 A tool to ergonomically repeat a specific TestCafe test and skip other tests. Useful for debugging unstable tests.
 
+## Installation
+
+```lang: shell
+npm i @klaster_1/testcafe-repeat-test
+```
+
 ## Usage notes
 
 Test repeater only works if you use the globally available function and do not import it from TestCafe:
